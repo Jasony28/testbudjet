@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestion de Budget</title>
+  <link rel="stylesheet" href="budget.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Gestion de Budget</h1>
+    <div style="text-align:left; margin-bottom:15px;">
+      <button id="btnAccueil" class="btn-accueil">Accueil</button>
+    </div>
+
+    <form id="transactionForm">
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" required>
+          <option value="depense">Dépense</option>
+          <option value="revenu">Revenu</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="categorie">Catégorie</label>
+        <select id="categorie" required>
+          <option value="Loyer">Loyer</option>
+          <option value="Alimentation">Alimentation</option>
+          <option value="Transport">Transport</option>
+          <option value="Loisirs">Loisirs</option>
+          <option value="Salaire">Salaire</option>
+          <option value="Vente">Vente</option>
+          <option value="Cadeau">Cadeau</option>
+        </select>
+        <button type="button" id="addCategorieBtn">Ajouter une catégorie</button>
+      </div>
+      <div class="form-group">
+        <label for="montant">Montant</label>
+        <input type="number" id="montant" required min="0" step="0.01" />
+      </div>
+      <button type="submit" id="addOperation">Ajouter</button>
+    </form>
+
+    <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <div style="flex:1; min-width:220px;">
+        <canvas id="depensesChart" width="300" height="200"></canvas>
+      </div>
+      <div style="flex:1; min-width:220px;">
+        <canvas id="revenusChart" width="300" height="200"></canvas>
+      </div>
+    </div>
+
+    <ul id="transactionsList"></ul>
+    <hr />
+
+    <p>Total Dépenses : <span id="totalDepenses">0</span> €</p>
+    <p>Total Revenus : <span id="totalRevenus">0</span> €</p>
+    <p>Solde : <span id="solde">0</span> €</p>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Firebase App (core SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <!-- Ton script JS -->
+  <script src="budget.js"></script>
+</body>
+</html>

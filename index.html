@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fond-index">
+
+<div class="main-container" id="main-content">
+    <h1>Menu principal</h1>
+    <div class="desc-page">Choisis ton application !</div>
+    <div id="auth-section" style="text-align:center; margin-bottom:30px;"></div>
+    <div id="apps-list"></div>
+</div>
+
+<!-- Firebase (dans cet ordre !) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<!-- Menu d'apps -->
+<script src="apps.js"></script>
+</body>
+</html>
